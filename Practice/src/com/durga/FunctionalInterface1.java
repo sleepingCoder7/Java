@@ -23,6 +23,18 @@ public class FunctionalInterface1 {
 				System.out.println("New thread created");
 			}
 		}).start();
+		
+		/* 
+		 * Functional interfaces introduced in Java 8 
+		 * 1) Runnable interface - This only contains run() method
+		 * 2) Comparable interface - This only contains compareTo() method
+		 * 3) ActionListener interface - This only contains actionPerformed() method
+		 * 4) Callable interface - This only contains the call() method
+		 * 
+		 * 
+		 * 
+		 * */
+		
 	}
 
 }

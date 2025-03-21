@@ -39,6 +39,14 @@ public class SessionDemoServlet extends HttpServlet {
 		}
 
 		out.println("Request parameter has username as " + userName);
+		out.flush();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		out.println("<br>Session parameter has username as " + (String) session.getAttribute("savedUserName"));
 		out.println("<br>Context parameter has username as " + (String) context.getAttribute("savedUserName"));
 
