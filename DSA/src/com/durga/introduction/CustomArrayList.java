@@ -37,6 +37,24 @@ public class CustomArrayList {
 		size++;
 	}
 	
+	public void add(int index, Object obj) throws Exception {
+		if(index > size || index < 0) {
+			throw new Exception("Index not found");
+		}
+		
+		if(size >= array.length) {
+			int newSize = array.length + (array.length / 2);	//Increased the array size
+			array = Arrays.copyOf(array, newSize);
+		}
+		
+		for (int i = size; i > index; i--) {	//From 10,20,30,40,50 to 10,20,30,30,40,50
+			array[i] = array[i-1];
+		}
+		
+		array[index] = obj;
+		size++;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder s = new StringBuilder();
@@ -53,7 +71,7 @@ public class CustomArrayList {
 	}
 	
 	public Object get(int index) throws Exception {
-		if(index >= array.length || index < 0) {
+		if(index >= size || index < 0) {
 			throw new Exception("Index not found");
 		}
 		return array[index];
@@ -74,6 +92,17 @@ public class CustomArrayList {
 			}
 		}
 		return -1;
+	}
+	
+	public Object remove(int indexToBeDeleted) throws Exception {
+		Object ob = get(indexToBeDeleted);
+		int noOfShiftOperations = array.length - indexToBeDeleted - 1;
+		if(noOfShiftOperations > 0) {
+			System.arraycopy(array, indexToBeDeleted + 1, array, indexToBeDeleted, noOfShiftOperations);
+		}
+		array[--size] = null;
+		
+		return ob;
 	}
 
 }
