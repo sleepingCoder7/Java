@@ -14,7 +14,7 @@ public class ArrayListExample {
 		l.add(3,40);
 		l.add(50);
 		l.add(60);
-		l.add(70);
+		l.add(null);
 		l.add(80);
 		l.add(90);
 		
@@ -44,6 +44,27 @@ public class ArrayListExample {
 		System.out.println(l2);
 		l2.add(2, 70);
 		System.out.println(l2);
+		
+		
+		CustomVector l3 = new CustomVector();
+		l3.add(10);
+		l3.add("Durga");
+		l3.add(new Employee());
+		l3.add(40);
+		l3.add(50);
+		
+		System.out.println(l3);
+		System.out.println(l3.get(1));
+		System.out.println(l3.size());
+		System.out.println(l3.contains("Durga"));
+		System.out.println(l3.indexOf("Durga"));
+		
+		l3.remove(2);
+		System.out.println(l3);
+		l3.add(60);
+		System.out.println(l3);
+		l3.add(2, 70);
+		System.out.println(l3);
 	}
 
 }

@@ -62,7 +62,8 @@ public class CustomArrayList {
 		for (int i = 0; i < array.length; i++) {
 			if(i == size - 1) {	
 				s.append(array[i]);
-			}else if(array[i] != null) {
+				break;
+			}else {
 				s.append(array[i]+", ");
 			}
 		}
